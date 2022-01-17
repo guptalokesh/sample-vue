@@ -1,0 +1,30 @@
+// Body
+body {
+	font-family: $baseFont;
+	color: $baseFontColor;
+	line-height: $baseLineHeight;
+	// -webkit-font-smoothing: antialiased;
+}
+
+// Headings
+h1, h2, h3, h4, h5, h6 {
+	margin-top: 6px;
+	margin-bottom: 6px;
+	strong {font-weight: 600 !important;}
+}
+
+h4 {
+	font-size: 2rem;
+	color: $darkenGrey;
+}
+
+h5 {
+	font-size: 1.6rem;
+	font-weight: 500;
+	color: $darkenGrey;
+}
+
+h6 {
+	font-size: 1.4rem;
+	font-weight: 500;
+}

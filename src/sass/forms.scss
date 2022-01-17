@@ -1,0 +1,428 @@
+.form-group {
+	margin-bottom: 24px;
+
+	.field-focussed {
+		font-size: 1.6rem;
+		font-weight: 500;
+	}
+
+	.optional {
+		margin-left: 16px;
+	}
+}
+
+.custom-search {
+	border: 1px solid $inputBorder;
+	border-radius: 5px;
+	background-color: $inputGrey;
+
+
+	i {
+		@include translateY;
+		font-size: 1.3em !important;
+		color: $inputSearch !important;
+	}
+
+	input {
+		color: $inputPlaceholder !important;
+		&:focus {
+			background-color: $inputGrey !important;
+		}
+	}
+}
+
+.no-shadow {
+	box-shadow: none;
+
+	&:hover {
+		box-shadow: none !important;
+	}
+}
+
+.box-filter {
+	.form-group {
+		margin-bottom: 10px;
+	}
+
+	.custom-select:not(.select-bordered) {
+		select {
+			padding-bottom: 4px;
+			font-weight: 500;
+		}
+	}
+
+	.custom-select {
+		max-width: 125px;
+	}
+}
+
+// Custom Select
+.custom-select {
+	position: relative;
+	display: inline-block;
+
+	select {
+		border: 0;
+		background: lighten($black, 95%);
+		color: $darkenGrey;
+		padding-left: 0;
+		min-width: auto;
+		-webkit-appearance: none;
+   		-moz-appearance: none;
+        appearance: none;
+
+		&.w-100 {
+			text-align-last: center;
+		}
+	}
+
+	&:after {
+		display: inline-block;
+		font: normal normal normal 14px/1 FontAwesome;
+		font-size: inherit;
+		text-rendering: auto;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		content: "\f0d7";
+		right: 0;
+		font-size: 1.4rem;
+		pointer-events: none;
+		@include translateY;
+	}
+
+	&.select-bordered {
+		display: inherit;
+
+		select {
+			border: 1px solid $borderField;
+			border-radius: 4px;
+			background: lighten($black, 96.5%);
+			padding: 6px 22px 6px 10px;
+			min-width: 100px;
+		}
+
+		&:after {
+			right: 8px;
+			z-index: 2;
+		}
+
+		&.dark select {border-color: $darkenGrey;}
+	}
+
+	&.focussed {
+		select {
+			border: 1px solid $darkBlue;
+			&:after {
+				right: 8px;
+				z-index: 2;
+			}
+
+		}
+	}
+	&.select-small {
+		&:after {
+			right: 5px;
+			font-size: 12px !important;
+		}
+		select {
+			padding: 4px 5px 3px 5px;
+			font-size: 1.2rem;
+			white-space: nowrap;
+			text-overflow: initial;
+		}
+	}
+}
+
+.wrap-form-in {
+	width: 500px;
+	min-height: 500px;
+}
+
+.modal-header {
+	padding: 10px 2.5rem 15px 2.5rem;
+}
+
+.modal-confirm-language,
+.modal-add-note,
+.modal-status {
+	.modal-dialog {
+		max-width: 700px !important;
+		overflow: hidden;
+		border-radius: 5px;
+	}
+
+	.modal-header {
+		background: $lighterGrey;
+		border-bottom: .5px solid rgba($black, .2);
+
+		@media (max-width: 767px) {
+			padding: 1.5rem 1.8rem 1rem !important;
+		}
+	}
+
+	.modal-footer{
+		border-top: .5px solid rgba($black, .2) !important;
+	}
+
+	.modal-body {
+		padding: 20px 2.5rem !important;
+
+		@media (max-width: 767px) {
+			padding: 1.5rem 15px 1rem !important;
+		}
+	}
+}
+
+.modal-status {
+	.lang-status {
+		padding: 6px 12px;
+		border-radius: 15px;
+		margin-left: 5px;
+		font-weight: 400;
+		font-size: 1.2rem;
+		border: 1px solid rgba($black, .1);
+		color: $darkenGrey;
+	}
+
+	.listing-in {
+		padding: 0 0 0 16px;
+
+		li {
+			padding: 10px 0 !important;
+			border-bottom: 1px solid rgba($black, .1);
+
+			&:last-child {
+				border: 0;
+			}
+		}
+	}
+
+	.modal-body {
+		padding-bottom: 5px !important;
+	}
+
+	.modal-dialog {
+		max-width: 600px !important;
+	}
+
+	&.modal-large {
+		>.modal-dialog {
+			max-width: 85% !important;
+
+			@media (max-width: 767px) {
+				max-width: 100% !important;
+			}
+		}
+	}
+}
+
+.add-existing-user {
+	.box-filter .search-head .input-group input {
+		width: 95% !important;
+	}
+
+	.modal-dialog {
+		max-width: 500px !important;
+	}
+
+	.user-title {
+		span {
+			font-size: 1.4rem;
+		}
+	}
+
+	.card-100 {
+		border-bottom: 1px solid rgba($black, .1);
+		padding: 10px 0;
+
+		&:last-of-type {
+			border-bottom: 0;
+		}
+	}
+
+	.info-user {
+		width: 46%;
+	}
+}
+
+.content-header {
+	>.row {
+		display: flex;
+
+		>.col-md-6 {
+			width: auto;
+			white-space: nowrap;
+
+			&.box-filter {
+				margin-left: auto;
+
+				@media (max-width: 1435px) {
+					flex-flow: row wrap;
+				}
+			}
+		}
+	}
+}
+
+// Validation Messages
+
+.text-danger {
+	color: red;
+	font-size: 1.25rem;
+	display: block;
+	margin-top: 4px;
+	line-height: 1.2;
+}
+
+.text-danger+input {
+	margin-top: 12px;
+}
+
+.wrap-fields-trash {
+	position: relative;
+
+	.remove-fields {
+		position: absolute;
+		border-left: 1px dashed rgba(0, 0, 0, 0.2);
+		top: 15px;
+		bottom: 15px;
+		right: -40px;
+		padding-left: 10px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		color: rgba($black, .3);
+		font-size: 2rem;
+		transition: all .3s ease;
+
+		&:hover {
+			color: rgba($black, .6);
+		}
+
+		&:before,
+		&:after {
+			@include pseudoElement;
+			height: 1px;
+			border-top: 1px dashed rgba(0, 0, 0, 0.2);
+			width: 8px;
+			left: -10px;
+		}
+
+		&:before {
+			top: 0;
+		}
+
+		&:after {
+			bottom: 0;
+		}
+
+		>i:after {
+			@include pseudoElementLeft;
+			height: 1px;
+			border-top: 1px dashed rgba(0, 0, 0, 0.2);
+			width: 10px;
+			top: 50%;
+		}
+	}
+
+	&+.wrap-fields-trash {
+		margin-top: 20px;
+	}
+
+	>input.border-danger+span.text-danger+.remove-fields {
+		bottom: 40px;
+	}
+
+	>input[aria-required="true"]+span.text-danger+.remove-fields {
+		bottom: 40px;
+	}
+
+	&.trash-single {
+		.remove-fields {
+			right: -25px;
+			border: 0;
+
+			&:before,
+			&:after {
+				display: none;
+			}
+
+			>i:after {
+				display: none;
+			}
+		}
+	}
+}
+
+.multiselect {
+	.multiselect__select {
+		width: 22px;
+		padding: 4px 5px;
+
+		&:before {
+			color: $darkenGrey;
+			border-color: $darkenGrey transparent transparent;
+			border-width: 5px 4px 0;
+		}
+	}
+
+	.multiselect__tags {
+		border: 1px solid $borderField;
+		background: lighten($black, 96.5%);
+	}
+
+	.multiselect__option {
+		padding: 6px 12px;
+		min-height: inherit;
+
+		&:after {
+			line-height: 28px;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			display: none;
+		}
+	}
+
+	.multiselect__single {
+		background: transparent;
+	}
+}
+
+// Global Form Fields/Textareas
+.form-control {
+	height: 38px;
+	min-width: 120px;
+	border-radius: 4px;
+	background: lighten($black, 96.5%);
+	&:focus {border-color: $darkBlue;}
+	option.placeholder {color: lighten($black, 60%);}
+	&.focussed {border: 1px solid $darkBlue;}
+	&.control-small {
+		padding: 2px 22px 2px 7px !important;
+		height: 29px;
+	}
+	&.bg-transparent {background: transparent;}
+}
+
+textarea.form-control {
+	height: 100px;
+	resize: none;
+	&.auto-expand {
+		height: 38px;
+		overflow-y: hidden;
+	}
+}
+
+select:required:invalid {
+	color: lighten($black, 60%);
+
+	option[value=""][disabled] {
+		display: none;
+	}
+
+	option.placeholder {
+		color: lighten($black, 60%);
+	}
+}

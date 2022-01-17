@@ -1,0 +1,186 @@
+/*================== 
+Common Components
+==================*/
+// Status Circles
+.circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    color: $white;
+    background: $lightGrey;
+    display: inline-block;
+    padding: 1px;
+    line-height: 25%;
+    border: 3px solid transparent;
+    &.blue {border-color: $darkBlue;}
+    &.grey {border-color: lighten($black, 60%);}
+    &.blue-filled {
+        background: $darkBlue;
+        border-color: $darkBlue;
+    }
+    &.grey-filled {
+        background: lighten($black, 50%);
+        border-color: lighten($black, 50%);
+    }
+    i {font-size: 1.2rem;}
+}
+
+// Thumbnail Cards 
+.wrap-thumbnails {
+    align-items: stretch;
+    .card-thumbnail {
+        width: 200px;
+        border: 1px solid lighten($black, 90%);
+        border-radius: 4px;
+        position: relative;
+        padding-bottom: 60px;
+        background: $white;
+        @media (max-width: 1500px) {margin: 0 15px 15px 0 !important;}
+        .card-file {
+            height: 115px;
+            position: relative;
+            background: lighten($black, 80%);
+            &:before {
+                @include pseudoElementFull;
+                @include fontAwesome;
+                content: '\f03e';
+                font-size: 3.5rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .btn-download {
+                opacity: 0;
+                transition: all .3s ease;
+            }
+            &:hover {
+                .btn-download {opacity: 1;}
+            }
+        }
+        .card-info {
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            .btn-no-style {
+                margin: 0 15px 0 25px;
+                font-size: 1.8rem;
+            }
+        }
+        @media (max-width: 479px) {
+            width: 100%;
+            margin-right: 0;
+            .card-file {height: 175px;}
+        }
+    }
+    > .btn {
+        width: 200px;
+        white-space: normal;
+        @media (max-width: 479px) {width: 100%;}
+    }
+}
+
+// Reflection Main Content
+.btn-grey {
+    color: lighten($black, 50%);
+    &:hover {
+        box-shadow: none;
+        color: lighten($black, 20%);
+    }
+    svg path{
+    fill: lighten($black, 50%);
+    stroke: lighten($black, 50%);
+  }
+}
+
+#modalGallery {
+    .modal-dialog {
+        width: initial;
+        max-width: 75%;
+    }
+    .modal-body {max-height: initial;}
+    button.close {
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 1;
+        text-shadow: none;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        background: $white;
+        opacity: 1;
+        font-size: 1.5rem;
+        &:hover {color: $darkBlue;} 
+    }
+}
+
+.btn-thumbnail {
+    position: relative;
+    &:before {
+        top: 0;
+        @include pseudoElementFull;
+        background: rgba($black, .5);
+    }
+    &:after {
+        @include translateXY;
+        @include fontAwesome;
+        content: "\f00e";
+        color: $white;
+        font-size: 2.2rem;
+    }
+    &:before, &:after {
+        opacity: 0;
+        transition: all .3s ease;
+    }
+    &:hover {
+        &:before, &:after {opacity: 1;}
+    }
+}
+
+// Project Reporting Goals
+.card-reflection {
+    > .card.card-100 {
+        padding: 20px;
+        .card-clickable {
+            margin: -20px -20px 0;
+            padding: 20px;
+            cursor: pointer;
+        }
+    }
+    @media (max-width: 991px) {
+        > .card.card-100 {
+            padding: 12px 12px 0 !important;
+            .card-clickable {
+                margin: -12px -12px 0;
+                padding: 12px;
+            }
+            .card-head {
+                flex-direction: column;
+                .card-head-right {padding: 5px 0 0 53px;}
+            }
+        }
+    }
+}
+
+body {
+    .warning-reflection {
+    position: fixed;
+    z-index: 1035;
+    top: 7px;
+    left: 50%;
+    transform: translateX(-25%);
+    padding: 12px;
+    transition: all 200ms ease;
+    @media(max-width: 1500px) {
+            padding: 8px 12px;
+            top: 5px;
+        }
+    }
+    &.sidebar-collapse .warning-reflection{transform: translateX(-50%);}
+}
+
+
+.loader-in .velmld-overlay {
+    top: 40px !important;
+}

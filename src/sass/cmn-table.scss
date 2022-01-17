@@ -1,0 +1,116 @@
+.cmn-table {
+    border-radius: 5px;
+	box-shadow: 2px 3px 20px rgba($black, .1);
+    >h2 {
+        border-bottom: 1px solid $grey-300;
+        margin: 0 -1rem;
+        padding: 0 1rem 1rem;
+    }
+
+    .col-wrap {
+        background-color: $grey-1000;
+
+        .col-in {
+            border: 1px solid $black;
+            min-height: 100px;
+
+            @media(max-width: 992px) {
+                width: 50% !important;
+            }
+
+            @media(max-width: 768px) {
+                width: 100% !important;
+                
+                &.cell-empty{
+                    min-height: initial;
+                    border: none !important;
+                    padding: 0 !important;
+                }
+            }  
+        }
+
+        .cmn-text {
+            color: $grey-400;
+            font-weight: 500;
+
+            em {
+                color: $inputPlaceholder;
+                font-weight: 400;
+            }
+        }
+
+        label {
+            color: $grey-400;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        textarea,
+        .multiselect__tags {
+            background-color: #F6F6F6;
+            border-radius: 3px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        textarea,
+        .multiselect {
+            min-height: 32px;
+        }
+        
+        textarea {
+            width: 100%;
+            resize: none;
+            padding: 0 10px;
+        }
+
+        .vdp-datepicker__calendar{
+            right: 0;
+            left: initial;
+            max-width: 265px;
+        }
+    }
+
+    textarea[disabled="disabled"],
+    input[disabled="disabled"],
+    select[disabled="disabled"]{
+        color: $black !important;
+    }
+
+    textarea:not([disabled="disabled"]),
+    input:not([disabled="disabled"]),
+    select:not([disabled="disabled"]){
+        background-color: $white !important;
+        border-color: $darkBlue !important;
+        &:focus{
+            border-width: 2px;
+        }
+    }
+}
+
+.char-count-wrap {
+    position: relative;
+    textarea{
+        padding-bottom: 20px !important;
+    }
+    .char-count {
+        position: absolute;
+        bottom: 5px;
+        right: 18px;
+        margin: 0;
+    }
+}
+
+.cell-disabled {
+    position: relative;
+    &::after{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: rgba($lightenGrey, .5);
+        cursor: not-allowed;
+    }
+}

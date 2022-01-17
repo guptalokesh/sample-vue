@@ -1,0 +1,16 @@
+// we will use this file to store cards data and fetch from here
+// we can create id dynamically by ussing vue uuid/v4
+[
+  {
+    "id": 1,
+    "name": "Test3"
+  },
+  {
+    "id": 2,
+    "name": "Test1"
+  },
+  {
+    "id": 25,
+    "name": "Test2"
+  }
+]

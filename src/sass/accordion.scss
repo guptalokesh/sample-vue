@@ -1,0 +1,270 @@
+.wrap-accordion {
+	justify-content: initial !important;
+	align-items: initial;
+	.col-sm-6 + .col-sm-6 {
+		position: relative;custom-pagination
+		&:before {
+			@include pseudoElementLeft;
+			top: 55px;
+			bottom: 10px;
+			width: 1px;
+			border-left: 1px dashed rgba($black,.2);
+		}
+	}
+	.panel {
+		margin-bottom: 16px;
+		> h4 > a:not(.no-expand) {
+			padding: 12px 35px 11px 30px;
+			display: block;
+			position: relative;
+			transition: all .3s ease;
+			font-size: 1.6rem;
+			margin-right: -40px;
+			border-radius: 4px;
+			color: $lightBlue;
+			&.d-flex{display: flex !important;}
+			@media (max-width: 767px) {
+				font-size: 1.6rem !important;
+				padding: 9px 35px 7px 25px;
+				&:before {
+					top: 11px !important;
+    				left: 10px !important;
+				}
+			}
+			&.collapsed {color: $linkColor;}
+			&:hover {color: $blue-400;}
+			&.text-black {
+				color: $darkenGrey !important;
+				&:hover {color: $black;}
+			}
+			.info-right {
+				position: absolute;
+				right: 15px;
+				top: 4px;
+				font-size: 2.5rem;
+			}
+			&:before {
+				display: inline-block;
+			    font: normal normal normal 14px/1 FontAwesome;
+			    font-size: inherit;
+			    text-rendering: auto;
+			    -webkit-font-smoothing: antialiased;
+			    -moz-osx-font-smoothing: grayscale;
+			    position: absolute;
+			    left: 14px;
+			    content: "\f0d7";
+			    transition: all .3s ease;
+			    top: 14.5px;
+			}
+			&.collapsed:before {
+				transform: rotate(-90deg);
+			}
+		}
+		div.no-expansion {
+			padding: 12px 35px 11px 15px;
+			display: block;
+			position: relative;
+			transition: all .3s ease;
+			font-size: 1.8rem;
+			margin-right: -40px;
+			border-radius: 4px;
+			color: $black-100 !important;
+		}
+		.lang-added {
+			padding: 10px 15px;
+			font-size: 1.6rem;
+		}
+		.list-striped {
+			padding: 10px 20px 25px;
+			margin: 0;
+			list-style: none;
+			border-top: 1px solid rgba($black,.1);
+			> li {
+				margin-left: -10px;
+				padding: 10px;
+				cursor: default;
+				&:nth-child(odd) {background: $white;}
+				&:nth-child(even) {background: $lighterGrey;}
+			}
+			&.list-striped-dropdown {
+				> li {
+					position: relative;
+					padding-right: 40px;
+					padding: 8px 10px;
+					> .dropdown {
+						right: 5px;
+						@include translateY;
+					}
+				}
+			}
+		}
+		> h4 {
+			position: relative;
+			padding-right: 40px;
+			> .dropdown {
+				position: absolute;
+				right: 3px;
+				top: 10px;
+			}
+		}
+		.list-striped-wrap {
+			padding: 10px 20px 25px;
+			border-top: 0 solid rgba($black,.1);
+			.list-striped {
+				padding: 0; 
+				border-top: 0;
+			}
+		}
+	}
+	.panel > div {
+		@extend .panel;
+		margin-bottom: 10px;
+		&.modal {margin-bottom: 0;}
+		> div.shadow-accordion {box-shadow: $shadowAccordion !important;}
+	}
+	.panel.bg-primary-blue {
+		>div{
+			border-top: 1px solid $blue-300;
+		}
+	}
+}
+
+.badges-accordion {
+	height: 45px !important;
+	left: initial !important;
+	transform: none !important;
+	right: 0;
+	li {
+		border: 0 !important;
+		margin-left: 1px !important;
+		width: 140px !important;
+		font-size: 1.4rem;
+		&:last-child {border-radius: 0 4px 4px 0;}
+	}
+}
+
+.panel-collapse {
+	.badges-accordion {
+		opacity: 0;
+		transition: all .3s ease;
+		display: none;
+	}
+	&.in {
+		.badges-accordion {
+			opacity: 1;
+			display: block;
+			transition-delay: .5s;
+		}
+	}
+}
+
+.dropdown-large {
+	.dropdown-menu { min-width: 200px !important;
+		a {white-space: normal;}
+	}
+}
+
+// PM Dashboard Accordions
+.accordion-dashboard {
+	.panel {
+		.listing-wrap {
+			padding: 0 25px !important;
+			@media (max-width: 479px) {
+				padding: 0 15px !important;
+				.listing-in {
+					margin-right: -15px;
+					padding-right: 15px !important;
+				}
+			}
+			ul > li:first-child {padding-top: 0;}
+		}
+		> h4 {
+			padding-right: 0;
+			> a {
+				margin-right: 0 !important;
+				padding-right: 10px !important;
+				font-size: 2rem !important;
+				.btn {
+					float: right;
+					margin-top: -3px;
+				}
+				.badge {margin: -3px 0 0 3px;}
+				@media (max-width: 479px) {
+					font-size: 1.6rem !important;
+					.btn {margin-top: -4px;}
+				}
+			}
+			> .custom-select .form-control {
+				height: 34px;
+				padding: 4px 22px 4px 10px;
+			}
+			.tooltip-hover {
+				&.bottom-left .tooltip-custom {left: 0;}
+				&.bottom-left .tooltip-custom,
+				&.bottom-right .tooltip-custom {top: 100%;}
+			}
+		}
+		table td {
+			padding: 15px 20px !important;
+		}
+		table.dx-datagrid-table td {
+			padding: 5px !important;
+		}
+	}
+	#finishLineTools {margin: 0 20px 20px !important;}
+	@media (max-width: 991px) {
+		.col-md-12 {width: 100%;}
+	}
+}
+
+// OA Dashboard
+.oa-dashboard {
+	> .wrap-tabs {
+		position: fixed;
+		top: 5px;
+		right: 65px;
+		z-index: 1031;
+		padding: 0;
+		@media (min-width: 1500px) {top: 12px;}
+		@media (max-width: 479px) {display: none;}
+		> .dropdown {
+			position: static;
+			>.btn {
+				padding: 5px 10px 4px;
+				background: white;
+			}
+			> .dropdown-menu {position: absolute !important;}
+		}
+	}
+	> a {
+		width: calc(25% - 20px);
+		.small-box {position: static;}
+		@media (max-width: 1199px) {width: calc(50% - 20px);}
+		@media (max-width: 479px) {width: calc(100% - 20px);}
+	}
+	.tooltip-custom {
+		left: inherit !important;
+		right: -6px !important;
+		&:after {
+			left: inherit !important;
+    		right: 10px !important;
+		}
+	}
+	@media (max-width: 768px) {
+		.small-box > .inner {
+			> .d-flex:first-child {margin-bottom: 10px;}
+		}
+	}
+}
+
+.tab-active {
+	&:after {
+		position: absolute;
+		content: '';
+		height: 4px;
+		background: $darkBlue;
+		width: 100%;
+		top: -7px;
+		left: 0;
+	}
+}

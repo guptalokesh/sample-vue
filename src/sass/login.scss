@@ -1,0 +1,49 @@
+// Login Page
+.user-login {
+	background: $bgBody;
+	.wrapper {
+		height: 100vh !important;
+		flex-flow: column wrap;
+		position: relative;
+	}
+	h1 {
+		font-family: $oswald;
+		font-size: 8rem;
+		color: $black;
+	}
+	.btn {
+		box-shadow: $shadowBtn;
+		border: 0;
+	}
+	.login-text {color: $darkenGrey;}
+	.text-small {
+		font-size: 1.2rem;
+		max-width: 335px;
+		line-height: 1.6;
+	}
+	select {
+		option{
+			display: none;
+		}
+	}
+}
+
+
+
+.offline-login-wrapper {
+	max-width: 698px;
+	padding-left: 15px;
+	padding-right: 15px;
+	.btn-primary {
+		padding-top: 14px !important;
+		padding-bottom: 14px !important;
+	}
+	.form-control{
+		height: 40px;
+	}
+}
+.modals-wrapper{
+	>div{
+		z-index: 999999;
+	}
+}

@@ -1,0 +1,268 @@
+// Organisation Settings
+.org-settings {
+    .org-sidebar {
+        width: 160px;
+        background: $lighterGrey;
+        border-top: 1px solid $border-dark;
+        box-shadow: 0 0 6px rgba($black, .15);
+        border-radius: 5px 0 0 5px;
+        li {
+            border-bottom: 1px solid $border-dark;
+            line-height: 1.2;
+            padding: 6px 10px 5px;
+            min-height: 42px;
+            cursor: pointer;
+            i {margin-right: 8px;}
+        }
+    }
+    .org-settings-right {
+        width: calc(100% - 160px);
+        padding-bottom: 0 !important;
+        min-height: 500px;
+        > div {
+            padding-bottom: 75px;
+            position: relative;
+        }
+        .org-btns {
+            position: absolute;
+            bottom: 25px;
+            left: 15px;
+            right: 15px;
+        }
+        .wrap-tabs {
+            overflow-x: auto;
+            li {
+                display: flex;
+                flex: 0 0 auto;
+                max-width: 90px;
+                align-items: center;
+                margin-right: 30px;
+            }
+        }
+        .custom-dataGrid{padding-bottom: 20px;}
+        .error-wrap {
+            top: 0;
+            right: 0;
+        }
+        .unsaved-data-warning + .error-wrap {top: 36px;}
+        .unsaved-data-warning.hide-data-warning + .error-wrap {top: 0px;}
+    }
+    .questions-wrapper {
+        border: 1px solid $grey-1000;
+        box-shadow: 0 .5rem 1rem rgba(0,0,0,.12)!important;
+        overflow: hidden;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+        .card{
+            border: 1px solid $grey-300;
+            overflow: hidden;
+        }
+        a:not(.no-expand){
+            padding-left: 30px !important;
+            &::before {
+                top: 11px;
+                left: 11px;
+            }
+        }
+        .wrap-accordion{
+            .checkbox-custom label:before,
+            .checkbox-custom-grey label:before{
+                padding: 6px;
+            }
+            .checkbox-custom input:checked + label:after,
+            .checkbox-custom-grey input:checked + label:after{
+                top: 3px;
+                left: 6px;
+            }
+            .checkbox-custom label:before,
+            .checkbox-custom-grey label:before,
+            .checkbox-custom input:checked + label:after,
+            .checkbox-custom-grey input:checked + label:after{
+                border-color: $darkBlue;
+            }
+        }
+        .single-question:not(:nth-last-of-type(1)){
+            border-bottom: 1px solid $grey-300;
+        }
+    }
+    .custom-dataGrid{padding: 0;}
+    textarea.form-control {height: 125px;}
+    .btn-next .fa-inverse {
+        font-size: 3rem;
+        left: 2px;
+    }
+    .btn-prev .fa-inverse {
+        font-size: 3rem;
+        left: -2px;
+    }
+    .table-bordered {
+        min-width: 100%;
+        td {
+            vertical-align: middle;
+            border: 1px solid $cellBorder;
+        }
+    }
+    .table-scroll-y {
+        height: calc(100vh - 460px);
+        overflow-y: scroll;
+        padding-top: 1px;
+        margin-right: -10px;
+    }
+}
+
+.tooltip-small {
+    .round-small {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: lighten($black, 45%);
+        color: $white;
+        font-size: 1.2rem;
+        text-align: center;
+        padding-top: 2px;
+        margin-right: 2px;
+    }
+    & + .tooltip .tooltip-inner {
+		text-align:left;
+        padding: 7px 10px;
+        min-width: 115px !important;
+	}
+}
+
+.tooltip .tooltip-inner {
+    font-size: 1.2rem;
+    font-weight: 400;
+    font-family: $rubik !important;
+    line-height: 1.4;
+}
+
+// Switch Button without Labels
+.toggle-switch {
+    input[type=checkbox] {
+        display:none;
+        &:checked + label .toggle-track:before{
+            background: lighten($black, 75%);
+            right: 14px;
+        }
+    }
+    label {
+        cursor:pointer;
+        .toggle-track {
+            display: block;
+            height: 12px;
+            width: 30px;
+            background: white;
+            border-radius: 20px;
+            position: relative;
+            margin-bottom: 15px;
+            border: 1px solid rgba($black,.2);
+            &:before{
+                content: '';
+                display: inline-block;
+                height: 16px;
+                width: 16px;
+                background: $darkBlue;
+                border-radius: 20px;
+                position: absolute;
+                top: -3px;
+                right: -1px;
+                transition:right .2s ease-in;
+            }
+        }
+    }
+}
+
+.hide-data-warning {
+    display: none;
+    &.d-inline-block{
+        display: none !important;
+    }
+}
+
+.pnp-table{
+    thead{
+        th{
+            position: relative;
+        }
+        tr>th:nth-child(2){
+            width: 85px;
+        }
+
+        tr>td:nth-child(1),
+        tr>td:nth-child(2){
+            text-transform: none !important;
+        }
+    }
+    &.wrap-table-sticky{
+        tr>td:not(.border-right-none):nth-child(1),
+        tr>td:not(.border-right-none):nth-child(2),
+        tr>th:not(.border-right-none):nth-child(1),
+        tr>th:not(.border-right-none):nth-child(2){
+            border-right: 1px solid $darkenGrey !important;
+        }
+    }
+    
+    .textarea-shadow-in {
+        textarea,
+        .textarea-shadow{
+            background-color: $lightenGrey;
+            border-radius: 4px;
+            padding: 8px 5px 8px 22px !important;
+        }
+
+        textarea{
+            &:focus{
+                background-color: $white;
+            }
+
+            &:focus-visible{
+                outline: none;
+            }
+
+            &::-webkit-input-placeholder { /* Edge */
+                color: $inputSearch !important; 
+                line-height: 1.8;
+            }
+
+            &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+                color: $inputSearch !important; 
+                line-height: 1.8;
+            }
+
+            &::placeholder {
+                color: $inputSearch !important; 
+                line-height: 1.8;
+            }
+        }
+    }
+
+    .textarea-shadow-wrap {
+        &.search-active{
+            .fa-search{display: none;}
+            textarea,
+            .textarea-shadow{
+                padding-left: 5px !important;
+                padding-right: 22px !important;
+            }
+        }
+    }
+}
+
+table{
+    td:not(.border-right-none).border-right-pseudo {
+        position: relative;
+        &:before{
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -1px;
+            width: 1px;
+            height: 100%;
+            background-color: $darkenGrey;
+        }
+    }
+}
+

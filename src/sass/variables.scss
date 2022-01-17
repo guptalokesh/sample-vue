@@ -1,0 +1,94 @@
+// Base Colors
+$black				:#000;
+$black-100          :#222;
+$dark-black         :#030303;
+$lightBlack         :#040404;
+$grey-100           :#888;
+$grey-200           :#777;
+$grey-300           :#979797;
+$grey-400           :#555555;
+$grey-500           :#3D3D3D;
+$grey-600           :#808080;
+$grey-700           :#A6A6A6;
+$grey-800           :#3d3d3d;
+$grey-900           :#c6c6c6;
+$grey-1000          :#EEEEEE;
+$darkGrey			:#555;
+$darkenGrey			:#222d32;
+$darkerGrey			:#999;
+$lightGrey			:#ecf0f5;
+$inputGrey          :#F7F7F7;
+$inputBorder        :#ccc;
+$bg-grey            :#F9F9F9;
+$inputPlaceholder   :#797979;
+$inputSearch        :#838383;
+$white				:#ffffff;
+$white-100          :#f4f4f4;
+$white-200          :#D8D8D8;
+$white-300          :#f5f5f5;
+$lighterGrey		:#f9f9f9;
+$nevyBlue           :#35495E;
+$lightenGrey		:#f6f6f6;
+$darkBlue			:#3c8dbc;
+$blue-300           :#3D8EBC;
+$blue-400           :#72afd2;
+$blue-500           :#178FC1;
+$blue-600           :#337ab7;
+$blue-700           :#CBE8FB;
+$darkenBlue			:#367fa9;
+$primary-blue       :#cbe8fa;
+$lightBlue          :#0073b7;
+$yellow-100         :#FFC107;
+$yellow-dark        :#f39c12;
+$yellow-light       :#ffd591;
+$yellow-medium      :#fdbe5a;
+$lightGreen         :#96FF88;
+$green-100          :#289F56;
+$lightRed           :#FFAEAE;
+
+
+// BG Sections
+$bgSidebar			:$darkenGrey;
+$bgHeader			:$darkBlue;
+$bgBody				:$lightGrey;
+
+// Base Font Families
+$rubik				:'Rubik', sans-serif;
+$oswald				:'Oswald', sans-serif;
+$lineHeight			:1.4;
+$baseFont			:$rubik;
+$logoFont			:$oswald;
+$baseFontColor		:$darkGrey;
+$baseLineHeight		:$lineHeight;
+
+// Borders
+$borderColor		:$lightGrey;
+$tableBorderColor	:$borderColor;
+$borderField        :#d2d6de;
+$border-dark        :#eee;
+$border-light       :#EDEDED;
+$colorLight         :#ccc;
+
+// Table Cells Bg / Borders
+$cellBorder         :#ddd;
+$cellLight          :#f2f2f2;
+$cellDark           :#e9e9e9;
+
+// Text / BG Colors
+$textDark			:$darkenGrey;
+$textLight			:$lightGrey;
+$linkColor			:#3c8dbc;
+$darkRed            :#ff5e4d;
+$lightRed           :#FF5E4D;
+$darkYellow         :#f3f15a;
+$darkGreen          :#6de26b;
+$brightGreen        :#05FF01;
+$darkOrange         :#ffbe4a;
+$brightPink         :#EB58F9;
+
+// Shadows
+$boxShadowFilterBar :0 5px 6px rgba($black,.1);
+$shadowCardPanel    :0 5px 6px rgba($black,.1);
+$shadowAccordion    :0 0 2px 1px rgba($black, .1);
+$shadowBtn          :0 5px 10px rgba($black,.3);
+$shadowDropdown     :0 6px 12px rgba($black,.175)

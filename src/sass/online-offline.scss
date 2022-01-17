@@ -1,0 +1,140 @@
+.wrapper {
+    overflow: visible;
+}
+
+.online-offline-wrapper {
+    >.card.card-100 {
+        padding-left: 20px !important;
+
+        a {
+            margin-left: 43px;
+        }
+
+        .checkbox-custom {
+            input {
+                width: 24px;
+                height: 23px;
+                margin: 0;
+                &:checked+label:after,
+                &:checked+label:after {
+                    top: 1px;
+                    left: 9px;
+                    width: 7px;
+                    height: 15px;
+                    border-width: 0 3px 2px 0;
+                }
+            }
+
+            label:before,
+            label:before {
+                margin-right: 15px !important;
+                padding: 10px;
+            }
+        }
+
+    }
+
+    .wrap-accordion {
+        .panel a:not(.no-expand) {
+            padding-left: 55px !important;
+
+            &:before {
+                top: 13px !important;
+                left: 25px;
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+.sidebar-collapse {
+    .sync-status {
+        left: 15px;
+    }
+}
+
+.sync-status {
+    position: fixed;
+    right: 15px;
+    left: 245px;
+    top: 5px;
+    color: $inputPlaceholder !important;
+    z-index: 99999;
+    pointer-events: none;
+    transition: left 300ms ease;
+    -webkit-transition: left 300ms ease;
+    -moz-transition: left 300ms ease;
+    -ms-transition: left 300ms ease;
+    -o-transition: left 300ms ease;
+
+    @media(max-width: 767px) {
+        left: 15px;
+        >div{
+            font-size: 12px !important;
+        }
+    }
+
+    >.d-flex{
+        padding: 3px 10px;
+        pointer-events: all;
+        box-shadow: 0 5px 6px rgb(0 0 0 / 10%);
+
+        @media(min-width: 767px) {
+            max-width: 80%;
+        }
+    }
+
+    a,
+    a:hover {
+        color: $inputPlaceholder !important;
+    }
+    button{
+        padding: 3px;
+        font-size: 20px;
+        margin-top: -3px;
+    }
+}
+
+.set-password-modal {
+    .modal-header {
+        padding: 15px 30px !important;
+    }
+
+    .modal-dialog {
+        max-width: 831px;
+    }
+
+    .form-wrapper {
+        max-width: 431px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .toggle-pwd {
+        color: #AFAFAF !important;
+    }
+
+    .error-text {
+        color: $lightRed !important;
+    }
+
+    .modal-body {
+        max-height: 100% !important;
+    }
+}
+
+.warning-msg-modal {
+    .modal-dialog {
+        max-width: 647px;
+    }
+
+    .modal-header {
+        padding: 15px 30px !important;
+    }
+
+    .modal-body {
+        max-height: 100%;
+        min-height: initial !important;
+    }
+}
+

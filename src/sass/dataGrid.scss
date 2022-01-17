@@ -1,0 +1,214 @@
+// Data Grid Global CSS
+.custom-dataGrid {
+    padding: 15px;
+    background-color: $white;
+    h2 {
+        position: relative;
+        z-index: 10;
+        margin-right: auto;
+        @media(max-width: 991px){
+            max-width: 100% !important;
+        }
+    }
+    .info-text{
+        position: relative;
+        z-index: 10;
+        @media (max-width: 767px) {z-index: initial;}
+        .d-block:not(:first-child){margin-top: 15px;}
+        &+.velmld-overlay+h2 {
+            @media (max-width: 991px) {
+                line-height: 1.2;
+                font-size: 16px !important; 
+                padding-top: 5px !important;
+                margin-bottom: 10px !important;
+                max-width: 100%;
+            }
+            &+.dx-widget{
+                margin-top: -30px !important;
+                @media (max-width: 991px) {margin-top: 0 !important;}
+            }
+        }
+    }
+    .velmld-overlay+h2 {
+        line-height: 1.2;
+        font-size: 16px !important;
+        padding-top: 5px !important;
+        margin-bottom: 10px !important;
+        @media(max-width: 991px){
+            max-width: 100% !important;
+        }
+        &+.dx-widget{
+            margin-top: -28px !important;
+            @media (max-width: 991px) {margin-top: 0 !important;}
+        }
+    }
+
+    .dx-adaptive-detail-row {
+        .dx-label-h-align {
+            flex-direction: column;
+            span,label {
+                white-space: normal;
+                word-break: break-word;
+                width: auto !important;
+                padding-right: 0 !important;
+                //display: inline-block;
+                @media (max-width: 991px) {text-align: left !important;}
+            }
+            label {
+                span {width: auto !important;}
+                .dx-field-item-label-text {color: lighten($black, 50%);}
+            }
+        }
+        @media (max-width: 768px) {
+            td .dx-box-flex > div {
+                max-width: 100% !important;
+                width: 100% !important;
+            }
+            .dx-first-col{
+                padding-right: 0 !important;
+            }
+        }
+    }
+    .dx-placeholder::before {
+        padding: 4px 9px 3px 5px;
+        font-size: 12px;
+    }
+    .dx-datagrid-nodata {
+        max-width: 450px;
+        white-space: normal;
+        color: $darkGrey;
+    }
+
+    .dx-datagrid-header-panel {
+		.dx-toolbar {
+            margin: 0;
+            background-color: transparent;
+            .dx-toolbar-items-container {
+                height: auto;
+                .dx-toolbar-after {
+                    display: flex;
+                    flex-flow: row wrap;
+                    justify-content: flex-end;
+                    position: relative;
+                    .dx-toolbar-item {
+                        padding: 0;
+                        &:not(:nth-of-type(1)){
+                            display: inline-block;
+                            margin: 0 0 5px 10px;
+                            @media (max-width: 991px) {margin-left: 5px;}
+                        }
+                        &:nth-of-type(1) {margin-bottom: 5px;}
+                    }
+                    @media (max-width: 479px) {
+                        .dx-button-has-text .dx-button-content {
+                            padding: 7px 8px 8px;
+                        }
+                    }
+                }
+            }
+        }
+	}
+    .multiselect .multiselect__content-wrapper .multiselect__element .multiselect__option--selected.multiselect__option--highlight:after {display: none;}
+    .dx-invalid-message {display: none;}
+
+    .modal .modal-dialog {
+        margin-top: 45px;
+    }
+    .dg-custom-select {
+        max-width: 180px;
+    }
+    @media (max-width: 767px) {.dx-datagrid-focus-overlay {display: none;}}
+    .error-wrap:not(.d-none)+.velmld-overlay+h2+.dx-visibility-change-handler,
+    .error-wrap:not(.d-none)+.velmld-overlay+.dx-visibility-change-handler {
+        .dx-toolbar-after  {
+            padding-right: 50px;
+        }
+    }
+    td .custom-dataGrid {padding: 8px;}
+    .dx-header-row .dx-sort-indicator {
+        max-width: calc(100% - 34px) !important;
+    }
+}
+
+.tab-keydoc {
+    .dx-datagrid-rowsview {
+        table tbody tr td:first-child {
+            .dx-template-wrapper {
+                align-items: flex-start !important;
+            }
+        }
+    }
+}
+
+.tab-keydoc .table-custom-column {
+    @media (max-width: 479px) {
+        .dx-datagrid-table {
+            colgroup col:nth-child(2) {width: 150px !important;}
+            .dx-datagrid-table {
+                colgroup col:nth-child(1) {width: 175px !important;}
+                colgroup col:nth-child(2) {width: initial !important;}
+            }
+        }
+    }
+}
+
+// Export/Excel Icon Color
+.dx-icon-export-excel-button {
+    color: $darkBlue !important;
+}
+
+/*====================================
+Project Reports (Data Grid Responsive)
+====================================*/
+// DG Enhancements on Project Dashboard Responsive
+@media (max-width: 767px) {
+    .wrap-charts {
+        & + .custom-dataGrid {
+            padding: 8px;
+            border-radius: 3px;
+            .custom-dataGrid {
+                padding: 8px 6px;
+                border-radius: 3px;
+                table colgroup {
+                    col:nth-child(3) {width: auto !important;}
+                }
+                .custom-dataGrid {
+                    table colgroup {
+                        col:nth-child(1) {width: auto !important;}
+                    }
+                }
+            }
+        }
+    }
+}
+
+.dx-datagrid-adaptive-more {
+    font: unset !important;
+    width: 37px !important;
+    height: 30px !important;
+    background: $darkBlue;
+    border-radius: 2px;
+    &:before {
+        content: "Show /Hide" !important;
+        color: white;
+        font-size: 11px !important;
+        position: absolute;
+        left: 0;
+        text-align: left;
+        line-height: 1.05;
+        padding: 4px 0 0 4px;
+    }
+}
+
+.custom-dataGrid .dx-command-adaptive {
+    width: 40px !important;
+    min-width: 40px !important;
+    > span {
+        transform: rotate(0deg) !important;
+    }
+}
+
+.dx-datagrid-content .dx-datagrid-table .dx-row .dx-command-edit.dx-command-edit-with-icons {
+    width: 40px !important;
+    min-width: 40px !important;
+}

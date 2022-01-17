@@ -1,0 +1,156 @@
+.sidebar-mini.sidebar-collapse {
+	.sidebar-form {display: block !important;}
+	.header-left {padding-left: 50px;}
+	.main-header {
+		.sidebar-toggle {left: 0;}
+		.logo {
+		    font-size: 1.5rem;
+		    padding-left: 5px;
+		    padding-right: 5px;
+		    text-align: center;
+		}
+	}
+}
+
+.navbar-custom-menu > ul { 
+	display: flex;
+	align-items: center;
+	}
+
+	.user-body,
+	.user-footer {
+		padding: 8px !important;
+	}
+
+	.dropdown-menu{
+		right: 3px !important;
+		box-shadow: 0 4px 10px rgb(0 0 0 / 24%);
+	}
+
+	.user-body{
+		.custom-select {
+			.form-control{
+				height: 25px;
+				padding: 4px 22px 4px 5px;
+			}
+		}
+	}
+
+    .user-footer{
+		.btn{
+			border-color: $borderField;
+		}
+	}
+	
+.main-sidebar {
+	padding-top: 65px;
+	position: fixed;
+	box-shadow: 2px 3px 12px rgba(0, 0, 0, .6);
+	@media (max-width: 991px) {
+		> .sidebar {
+			overflow-y: auto;
+			overflow-x: hidden;
+			height: calc(100vh - 65px);
+			padding-bottom: 60px;
+		}
+	}
+}
+
+.sidebar-menu {
+	> li {
+		> a, > div > a {
+			padding: 12px 5px 12px 15px;
+			font-weight: 300;
+			>.fa,
+			>.glyphicon,
+			>.ion {
+				width: 30px;
+    			font-size: 1.8rem;
+			}
+			>.fa.fa-map-marker {font-size: 2.5rem;}
+			>.fa.fa-globe,
+			>.fa-check-square-o {font-size: 1.8rem !important;}
+			>.fa.fa-bookmark-o,
+			>.fa.fa-hand-o-up {font-size: 2rem;}
+			> .d-inline-block {
+				vertical-align: text-top;
+				> div {line-height: .7;}
+			}
+			&.link-crawn {
+				> div {
+					width: 30px;
+					padding-left: 2px;
+					img {vertical-align: top;}
+				}
+				&:hover img {
+					-webkit-filter: brightness(10);
+					filter: brightness(10);
+				  }
+			}
+		}
+	}
+}
+
+.sidebar-select {
+	padding: 0 15px 10px;
+	opacity: 1;
+	.multiselect .multiselect__content-wrapper {
+		min-height: 200px !important;
+		max-height: 50vh !important;
+		@media (max-width: 1199px) {max-height: 45vh !important;}
+	}
+}
+
+.sidebar-mini:not(.sidebar-mini-expand-feature).sidebar-collapse .sidebar-menu > li:hover > a > span:not(.pull-right) {
+	width: auto;
+	padding: 12px 15px 12px 5px;
+}
+
+
+// Treeview Menu
+.treeview-menu {
+	padding: 5px;
+}
+
+// New link with sidebar anchor links
+.skin-blue {
+	.sidebar-menu {
+		> li {
+			transition: all .3s ease;
+			> div {
+				width: 100%;
+				> a {
+					border-left: 3px solid transparent;
+					display: block;
+				}
+			}
+			&:hover > div > a,
+			> div.active > a {
+				color: $white;
+				background: #1e282c;
+			}
+			> div.active {
+				> a {
+					border-left-color: $darkBlue;
+				}
+				&+button {background: #1e282c !important;}
+			}
+			.btn-sec-sidebar {
+				border-radius: 4px;
+				width: 25px;
+				height: 25px;
+				margin: 0 10px;
+				border: 1px solid #b8c7ce;
+				background: transparent;
+				color: #b8c7ce;
+				transition: all .3s ease;
+				&:hover {
+					border: 1px solid $white;
+					color: $white;
+				}
+			}
+			&:hover {background: #1e282c;}
+		}
+	}
+}
+
